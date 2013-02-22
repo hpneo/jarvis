@@ -4,6 +4,6 @@ class Avenger < ActiveRecord::Base
   before_create :set_permalink
 
   def set_permalink
-    self.permalink = self.name if self.permalink.blank?
+    self.permalink = self.name.parameterize if self.permalink.blank?
   end
 end
